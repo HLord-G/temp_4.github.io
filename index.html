@@ -12,20 +12,81 @@
   
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <link rel="stylesheet" href="src/style/style.css">
+    <script defer src="scr/script/script.js"> </script>
  
 </head>
-<body data-theme="light">
- 
+<body data-theme="dark">
+
+
+    <menu class="androidmenu hidden max-[908px]:flex fixed top-0 left-0 h-[100vh] overflow-hidden flex-col justify-center items-center w-full z-[9909] bg-base-300" style="transform: translate(-999%,0%);">
+        <button class="closeandroidmenu absolute top-[5%] right-[6%]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-x-square" viewBox="0 0 16 16">
+                <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708"/>
+            </svg>
+        </button>
+
+        <main class="my-[20px] flex flex-col gap-[30px]">
+            <a class="text-4xl" href="#About">About</a>
+            <a class="text-4xl" href="#Classes">Classes</a>
+            <a class="text-4xl" href="#Subscribe">Subscribe</a>
+        </main>
+
+        <div>
+            
+        </div>
+    </menu>
+
+    <nav class="navanimation fixed flex flex-row justify-between items-center top-0 left-0 w-full py-[20px] px-[25px] z-50">
+        <div>
+            <h2 class="pt-serif-regular text-3xl">
+                FlexBoy
+            </h2>
+        </div>
+        <div class="flex flex-row justify-center items-center gap-[30px] max-[908px]:hidden">
+            <a class="text-sm" href="#About">About</a>
+            <a class="text-sm" href="#Classes">Classes</a>
+            <a class="text-sm" href="#Subscribe">Subscribe</a>
+
+            <button class="ml-[30px]  btn rounded-2xl btn-neutral">
+                    Start Free Trail
+            </button>
+        </div>
+
+        <div class="hidden flex-row justify-center items-center gap-[30px] max-[908px]:flex">
+            <button class="navopen">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                  </svg>
+            </button>
+        </div>
+    </nav>
+    <script>
+        const menuopen = document.querySelector(".navopen")
+        const closeandroidmenu = document.querySelector(".closeandroidmenu")
+
+        const timeline = gsap.timeline({ defaults: { duration: 1 }})
+
+        menuopen.addEventListener('click', () => {
+            timeline .to('.androidmenu', {  x: 0})
+        })
+
+        closeandroidmenu.addEventListener('click', () => {
+            timeline .to('.androidmenu', {  x: -999})
+        })
+
+    </script>
 
 
 
@@ -41,7 +102,7 @@
                 Start your journey to a healthier,
                 stronger you with our fitness app
             </p>
-<!-- overflow-hidden mask-b-from-70% -->
+ 
 
             <div class="border-[10px] border-b-0 border-black mt-[50px] rounded-t-[40px] w-[420px] h-[600px] relative zoom_actions">
                 <img src="https://dummyimage.com/420x600" class="absolute top-0 rounded-t-[30px] left-0 h-full w-full" alt="">
@@ -96,7 +157,7 @@
 
         <main class="flex flex-col justify-center items-end w-full px-[20px] mt-[127px] my-[20px]">
             <div class="w-[60vw] max-[768px]:w-[80vw] max-[425px]:w-[90vw] max-[425px]:px-[4px]">
-                <p class="mb-[20px]">How Sculpty fuels your fitness</p>
+                <p class="mb-[20px]">How FlexBoy fuels your fitness</p>
                 <h1 class="text-5xl pt-serif-regular max-[910px]:text-4xl max-[528px]:text-3xl max-[425px]:text-2xl">
                     I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font.
                 </h1>
@@ -217,7 +278,7 @@
 
 
     <section class="relative flex flex-col justify-center items-center bg-[url('https://dummyimage.com/1351x761')] bg-fixed bg-cover bg-center">
-        <main class="z-[9] w-[430px] min-h-[120vh] my-[60px] flex flex-col justify-around items-center max-[433px]:w-full">
+        <main class="z-[9] w-[430px] min-h-[90vh] my-[60px] flex flex-col justify-around items-center max-[433px]:w-full">
             
             
             <h1 class="text-5xl tracking-wide pt-serif-regular text-center max-[503px]:text-4xl max-[353px]:text-3xl">
@@ -247,13 +308,11 @@
  
 
     <section class="relative flex flex-col justify-start items-center">
-        <main class="w-[980px] my-[80px] min-h-[100vh] flex flex-col justify-center items-center space-y-7 max-[984px]:w-full">
+        <main class="w-[980px] my-[80px] min-h-[100vh]  max-[535px]:h-full max-[535px]:min-h-[20vh] flex flex-col justify-center items-center space-y-7 max-[984px]:w-full">
             <h1 class="text-5xl tracking-wide pt-serif-regular text-center max-[503px]:text-4xl max-[353px]:text-3xl">Explore the app</h1>
             <p class="px-[20px] text-center">
                 Discover personalized fitness plans, real-time progress tracking, community support and more.
             </p>
-
-
 
             <div class="w-full relative flex flex-row justify-center items-center">
 
@@ -273,7 +332,7 @@
 
                       <div class="swiper-slide">
                         <div class="w-full flex flex-row justify-center items-center max-[535px]:p-[10px]">
-                            <div class="grid_grp1 w-[520px] my-[20px] min-h-[480px]">
+                            <div class="grid_grp1 w-[520px] my-[20px] min-h-[480px] ">
                                 <div class="box1 border border-base-content/40 rounded-2xl p-[10px] flex flex-col justify-center items-center relative text-center overflow-hidden">
                                     <img src="https://dummyimage.com/268x316"  class="object-cover object-center absolute top-0 left-0 h-full w-full"  alt="">
                                 </div>
@@ -356,7 +415,7 @@
                                 </div>
                                 <div class="box4 border border-base-content/40 rounded-2xl p-[10px] flex flex-col justify-center items-center relative text-center overflow-hidden bg-base-200">
                                     <h3 class="text-4xl pt-serif-regular">
-                                        Sculpty
+                                        FlexBoy
                                     </h3>
                                 </div>
                             </div>
@@ -367,27 +426,24 @@
 
                       <div class="swiper-slide">
                         <div class="w-full flex flex-row justify-center items-center max-[535px]:p-[10px]">
-                            <div class="grid_grp3 w-[520px] my-[20px] min-h-[480px]">
+                            <div class="grid_grp3 w-[520px] my-[20px] min-h-[480px] max-[535px]:h-[480px]">
                                 <div class="box1 border border-base-content/40 rounded-2xl p-[10px] flex flex-col justify-center items-center relative text-center overflow-hidden"> 
-                                 You’re scheduled to
-                                    work out with Harold!   
+                                    <img src="https://dummyimage.com/268x316"  class="object-cover object-center absolute top-0 left-0 h-full w-full"  alt="">
                                 </div>
                                 <div class="box2 border border-base-content/40 rounded-2xl p-[10px] flex flex-col justify-center items-center relative text-center overflow-hidden"> 
-                                 You’re scheduled to
-                                    work out with Harold!   
+                                    <img src="https://dummyimage.com/268x316"  class="object-cover object-center absolute top-0 left-0 h-full w-full"  alt="">  
                                 </div>
                                 <div class="box3 border border-base-content/40 rounded-2xl p-[10px] flex flex-col justify-center items-center relative text-center overflow-hidden"> 
-                                 You’re scheduled to
-                                    work out with Harold!   
+                                    <img src="https://dummyimage.com/268x316"  class="object-cover object-center absolute top-0 left-0 h-full w-full"  alt="">
                                 </div>
                                 <div class="box4 border border-base-content/40 rounded-2xl p-[10px] flex flex-col justify-center items-center relative text-center overflow-hidden"> 
-                                    Sample Text Here 1
+                                    <img src="https://dummyimage.com/268x316"  class="object-cover object-center absolute top-0 left-0 h-full w-full"  alt="">
                                 </div>
                                 <div class="box5 border border-base-content/40 rounded-2xl p-[10px] flex flex-col justify-center items-center relative text-center overflow-hidden"> 
-                                    Sample Text Here 2
+                                    <img src="https://dummyimage.com/268x316"  class="object-cover object-center absolute top-0 left-0 h-full w-full"  alt="">
                                 </div>
                                 <div class="box6 border border-base-content/40 rounded-2xl p-[10px] flex flex-col justify-center items-center relative text-center overflow-hidden"> 
-                                    Sample Text Here 3 
+                                    <img src="https://dummyimage.com/268x316"  class="object-cover object-center absolute top-0 left-0 h-full w-full"  alt="">
                                 </div>
                             </div>
                         </div>
@@ -417,28 +473,275 @@
                       </div>
 
                     </div>
+                      <!-- Dot Indicators -->
+
                   </div>
             </div>
         </main>
     </section>
 
 
-    <section>
-        
+    <section class="min-h-[110vh] relative">
+        <img src="https://dummyimage.com/1689x1026" class="top-0 object-cover object-center left-0 absolute h-full w-full z-[9]" alt="">
+        <div class="bg-base-200 absolute z-[19] bottom-[2%] right-[1%] p-[20px] px-[30px] min-h-[420px] w-[450px] border border-base-content/40 flex flex-col justify-around items-center communityzoom">
+
+            <h1 class="text-4xl pt-serif-regular text-center">
+                Hear what our community has to say
+            </h1>
+
+            <div class="w-full">
+                <div class="swiper miniSwiper">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide py-[20px]">
+                        <p class="pt-serif-italic text-lg italic">
+“I'm a testimonial. Click to edit me and add text that says something nice about you and your services. Let your customers review you and tell their friends how great you are.”
+                        </p>
+
+                        <p class="text-sm italic mt-[20px]"> Harold G.</p>
+
+                      </div>
+                      <div class="swiper-slide py-[20px]">
+                        <p class="pt-serif-italic text-lg italic">
+“I'm a testimonial. Click to edit me and add text that says something nice about you and your services. Let your customers review you and tell their friends how great you are.”
+                        </p>
+
+                        <p class="text-sm italic mt-[20px]"> Arnold B.</p>
+
+                      </div>
+
+                      <div class="swiper-slide py-[20px]">
+                        <p class="pt-serif-italic text-lg italic">
+“I'm a testimonial. Click to edit me and add text that says something nice about you and your services. Let your customers review you and tell their friends how great you are.”
+                        </p>
+
+                        <p class="text-sm italic mt-[20px]"> Kim L.</p>
+
+                      </div>
+
+                      <div class="swiper-slide py-[20px]">
+                        <p class="pt-serif-italic text-lg italic">
+“I'm a testimonial. Click to edit me and add text that says something nice about you and your services. Let your customers review you and tell their friends how great you are.”
+                        </p>
+
+                        <p class="text-sm italic mt-[20px]"> Deck K.</p>
+
+                      </div>
+                      
+                      
+                      
+                    </div>
+                </div>
+                  <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="flex flex-col justify-center items-center relative bg-base-200">
+        <main class="my-[90px] flex flex-col justify-center items-center w-[70vw] space-y-14">
+            <h2 class="text-5xl tracking-wide pt-serif-regular text-center max-[503px]:text-4xl max-[353px]:text-3xl">
+                Never miss a thing
+            </h2>
+
+            <p class="my-[40px]">
+                Get updates and info to keep you going on your fitness journey.
+            </p>
+
+            <form class="w-[450px] max-[500px]:w-full">
+                <fieldset class="fieldset ">
+                    <legend class="fieldset-legend">Enter your email address*</legend>
+                    <input type="text" class="input w-full rounded-2xl" placeholder="Type here" />
+                </fieldset>
+
+                <fieldset class="fieldset mt-[10px] gap-[20px] flex flex-row justify-start items-center">
+                    <input type="checkbox" class="checkbox" />
+                    <small>Yes, subscribe me to your newsletter.*</small> 
+                </fieldset>
+                <fieldset class="fieldset mt-[30px] gap-[20px] flex flex-row justify-center items-center">
+                   <button class="btn btn-wide rounded-2xl btn-neutral"> Submit</button>
+                </fieldset>
+            </form>
+        </main>
+    </section>
+
+
+
+
+
+    <section class="min-h-[30vh] flex justify-center items-center">
+        <h1 class="text-[60px] sm:text-[100px] md:text-[150px] pt-serif-regular lg:text-[200px] xl:text-[150px]">
+          FlexBoy
+        </h1>
+    </section>
+      
+
+    <section class="px-[20px] pt-[50px] mt-[20px]">
+        <footer class="flex flex-row justify-between items-start min-h-[20vh] max-[716px]:flex-col">
+            <div class="flex-[1] flex flex-row gap-28 px-[20px] py-[10px] min-h-[27vh] max-[595px]:gap-[50px] max-[595px]:flex-col">
+                <div class="flex-1 text-sm flex flex-col justify-between items-start">
+                    <div>
+                        <p class="font-bold">Address</p>
+                    </div>
+                    <div class="mt-[20px]">
+                        <p class=" ">
+                            041 San Roque Lapasan Cagayan de Oro City
+                        </p>
+                    </div>
+                </div>
+                <div class="flex-1 text-sm flex flex-col justify-between items-start">
+                    <p class="font-bold">Legal</p>
+                    <div class="flex flex-col mt-[20px]">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms and </a>
+                        <a href="#">Conditions</a>
+                    </div>
+                </div>
+                <div class="flex-1 text-sm flex flex-col justify-between items-start">
+                    <p class="font-bold">Social</p>
+                    <div class="flex flex-col mt-[20px]">
+                        <a href="#">Instagram</a>
+                        <a href="#">Facebook</a>
+                        <a href="#">YouTube</a>
+                        <a href="#">TikTok</a>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-[1] flex flex-row justify-end items-start px-[20px] max-[595px]:mt-[60px]">
+                <div class="py-[30px] flex flex-col gap-[10px]">
+                    <button class="btn bg-white text-black border-[#e5e5e5]">
+                        <svg aria-label="Google logo" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><g><path d="m0 0H512V512H0" fill="#fff"></path><path fill="#34a853" d="M153 292c30 82 118 95 171 60h62v48A192 192 0 0190 341"></path><path fill="#4285f4" d="m386 400a140 175 0 0053-179H260v74h102q-7 37-38 57"></path><path fill="#fbbc02" d="m90 341a208 200 0 010-171l63 49q-12 37 0 73"></path><path fill="#ea4335" d="m153 219c22-69 116-109 179-50l55-54c-78-75-230-72-297 55"></path></g></svg>
+                        Login with Google
+                    </button>
+
+                    <button class="btn bg-black text-white border-black">
+                        <svg aria-label="Apple logo" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1195 1195"><path fill="white" d="M1006.933 812.8c-32 153.6-115.2 211.2-147.2 249.6-32 25.6-121.6 25.6-153.6 6.4-38.4-25.6-134.4-25.6-166.4 0-44.8 32-115.2 19.2-128 12.8-256-179.2-352-716.8 12.8-774.4 64-12.8 134.4 32 134.4 32 51.2 25.6 70.4 12.8 115.2-6.4 96-44.8 243.2-44.8 313.6 76.8-147.2 96-153.6 294.4 19.2 403.2zM802.133 64c12.8 70.4-64 224-204.8 230.4-12.8-38.4 32-217.6 204.8-230.4z"></path></svg>
+                        Login with Apple
+                    </button>
+                </div>
+            </div>
+        </footer>
+
+        <footer class="mt-[30px] min-h-[10vh] flex flex-row justify-start items-center px-[20px] text-center text-xs">
+        <p class="my-[20px]">
+            © 2035 by Harold Guzman. Powered and secured by <a href="#" class="link"> FlexBoy</a>
+        </p>
+        </footer>
     </section>
 
 
 </body>
 </html>
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
-  const swiper = new Swiper('.mySwiper', {
+   const swiper = new Swiper(".mySwiper", {
+      loop: true,
+      navigation: {
+        nextEl: ".custom-next",
+        prevEl: ".custom-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      } 
+    });
+
+  const miniswiper = new Swiper('.miniSwiper', {
      loop: true,
-    navigation: {
-      nextEl: '.custom-next',
-      prevEl: '.custom-prev',
-    },
+    pagination: {
+    el: '.swiper-pagination', // Mao ni ang container sa mga dot
+    clickable: true,          // Para pwede i-click ang mga dot
+  },
   });
+ 
 </script>
-<script src="scr/script/script.js"> </script>
+
+
+
+
+<script>/* nav scroll animation */
+
+  function navAnimations(selector, startOffset = 120) {
+  const navbar = document.querySelector(selector);
+  if (!navbar) return console.warn("Navbar not found");
+
+  // Add transition style via JavaScript
+  navbar.style.transition = "top 0.3s ease-in-out";
+
+  let lastScrollTop = window.scrollY;
+  let scrollUpCounter = 0;
+  let ticking = false;
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        const currentScrollTop = window.scrollY;
+
+        if (currentScrollTop > startOffset) {
+          if (currentScrollTop > lastScrollTop) {
+            // Scroll down
+            navbar.style.top = `-${navbar.offsetHeight}px`;
+            scrollUpCounter = 0;
+          } else {
+            // Scroll up
+            scrollUpCounter++;
+            if (scrollUpCounter >= 2) {
+              navbar.style.top = "0";
+            }
+          }
+        } else {
+          navbar.style.top = "0";
+          scrollUpCounter = 0;
+        }
+
+        lastScrollTop = currentScrollTop;
+        ticking = false;
+      });
+
+      ticking = true;
+    }
+  });
+}
+
+  navAnimations(".navanimation", 120)
+</script>
+
+
+
+<script> /* scroll animation */ 
+const scrollTriggers = [];
+
+function scrollTrigger(position, onBack, onOver) {
+  scrollTriggers.push({
+    position,
+    onBack,
+    onOver,
+    state: null, // 'over' or 'back'
+    triggeredOnce: false // para dili mo-fire sa start
+  });
+}
+
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY || window.pageYOffset;
+
+  scrollTriggers.forEach(trigger => {
+    if (scrollY > trigger.position) {
+      if (!trigger.triggeredOnce || trigger.state !== 'over') {
+        trigger.state = 'over';
+        trigger.triggeredOnce = true;
+        trigger.onOver();
+      }
+    } else if (trigger.triggeredOnce && trigger.state !== 'back') {
+      trigger.state = 'back';
+      trigger.onBack();
+    }
+  });
+});
+
+
+scrollTrigger(520, function() {
+    document.querySelector(".navanimation").classList.toggle('bg-base-300'); 
+}, function() {
+    document.querySelector(".navanimation").classList.toggle('bg-base-300'); 
+});
+
+</script>
